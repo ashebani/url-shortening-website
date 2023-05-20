@@ -31,6 +31,10 @@ Users should be able to:
 
 ![screenshot](./desktop-screenshot.png)
 
+#### Tablet View
+
+![screenshot](./tablet-screenshot.png)
+
 #### Mobile View
 
 ![screenshot](./mobile-screenshot.png)
