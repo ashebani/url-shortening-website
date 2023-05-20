@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1/hub)
-- Live Site URL: (https://intro-component-with-signup-form-master-pi-ten.vercel.app/)
+- Solution URL: (https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G/hub)
+- Live Site URL: (https://url-shortening-website-gamma.vercel.app/)
 
 ## My process
 
