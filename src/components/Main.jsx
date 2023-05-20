@@ -84,6 +84,7 @@ const Main = () => {
             ref={inputRef}
             className="bg-neutralWhite px-4 py-3 rounded-lg flex-auto"
             type="url"
+            required
             placeholder="Shorten a link here..."
           />
           <button className="bg-primaryCyan text-neutralWhite py-3 rounded-lg font-bold text-xl md:w-1/4 hover:bg-cyan-200">
