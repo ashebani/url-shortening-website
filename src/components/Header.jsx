@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
 
   const closeOnBig = () => {
-    console.log("first");
     if (window.innerWidth >= 768) {
       setOpen(false);
     }
@@ -12,10 +13,14 @@ const Header = () => {
 
   useEffect(() => {
     closeOnBig();
+    Aos.init({ duration: 800 });
   }, []);
 
   return (
-    <header className="p-6 md:py-6 md:px-20 lg:px-40 flex items-center justify-between text-center">
+    <header
+      className="p-6 md:py-6 md:px-20 lg:px-40 flex items-center justify-between text-center"
+      data-aos="fade-down"
+    >
       {/* Logo Section */}
       <div className="flex gap-4 items-center">
         <img
@@ -49,9 +54,14 @@ const Header = () => {
       >
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
       </svg>
+
+      {/* Mobile Navigation */}
       {open ? (
-        <div className="fixed top-0 left-0 right-0 z-20">
-          <nav className="navbar bg-primaryCyanViolet absolute left-0 right-0 p-8 top-24 mx-6 rounded-xl text-white text-xl grid font-bold gap-8 z-50">
+        <div className="fixed top-0 left-0 right-0 z-50">
+          <nav
+            data-aos="fade-right"
+            className="navbar bg-primaryCyanViolet absolute left-0 right-0 p-8 top-24 mx-6 rounded-xl text-white text-xl grid font-bold gap-8 z-50"
+          >
             <a href="/">Features</a>
             <a href="/">Pricing</a>
             <a href="/">Resources</a>

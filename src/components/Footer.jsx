@@ -29,7 +29,10 @@ const Footer = () => {
       <div className="md:flex md:gap-32 gap-10 grid">
         {links.map((group, idx) => {
           return (
-            <div key={idx}>
+            <div
+              data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+              key={idx}
+            >
               <p className="pb-4 font-bold">{group.title}</p>
               <ul className="text-neutralGrayishViolet grid gap-1">
                 {group.children.map((item, index) => {

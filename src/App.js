@@ -4,7 +4,7 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="pt-3">
+    <div className="pt-3 max-w-[1440px] m-auto">
       <Header />
 
       <Main />

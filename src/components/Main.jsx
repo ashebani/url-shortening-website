@@ -1,5 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ShortenedLinks from "./ShortenedLinks";
+import "./main.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Main = () => {
   const statisticsInfo = [
@@ -25,6 +28,10 @@ const Main = () => {
   const [shortenedLinks, setShortenedLinks] = useState([]);
   const inputRef = useRef();
 
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+  }, []);
+
   const dataFetcher = (e) => {
     e.preventDefault();
     const API_URL = "https://api.shrtco.de/v2/shorten?url=";
@@ -48,16 +55,19 @@ const Main = () => {
   };
 
   return (
-    <main>
+    <main className="-z-10">
       <div className="grid overflow-hidden justify-center relative lg:flex lg:flex-row-reverse px-6 md:pt-24 md:px-20 lg:px-40 md:text-left text-center py-10">
-        <div className="flex-1 lg:max-w-md md:p-0 px-10">
+        <div data-aos="fade-left" className="flex-1 lg:max-w-md md:p-0 px-10">
           <img
             className="lg:scale-150 md:scale-[120%] scale-[120%] -z-10 lg:translate-x-28 md:translate-x-1/5 translate-x-1/4"
             srcSet={require("../images/illustration-working.svg").default}
             alt="illustration-working"
           />
         </div>
-        <div className="z-10 md:flex-2 lg:flex-1 md:text-center lg:text-left">
+        <div
+          data-aos="fade-right"
+          className="z-10 md:flex-2 lg:flex-1 md:text-center lg:text-left"
+        >
           <h1 className="text-5xl md:text-7xl font-bold pt-8 -tracking-wider">
             More than just
             <br className="hidden lg:inline" /> shorter links
@@ -101,10 +111,11 @@ const Main = () => {
           Track how your links are performing across the web with
           <span className="lg:block">our advanced statistics dashboard.</span>
         </p>
-        <ul className="mb-14 mt-20 grid gap-20 md:gap-8 md:grid xl:grid-cols-3">
+        <ul className="info_ul mb-14 mt-20 grid gap-20 md:gap-8 md:grid xl:grid-cols-3">
           {statisticsInfo.map((item, index) => {
             return (
               <li
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                 key={index}
                 className={`p-8 first-letter relative z-50 bg-neutralWhite rounded-md transition ${
                   index === 0 ? "lg:-translate-y-10" : ""
