@@ -18,6 +18,7 @@ const ShortenedLinks = ({ item }) => {
         onClick={() => {
           navigator.clipboard.writeText(item.shortenedLink);
           setCopied(true);
+          alert("Copied successfully!");
           setTimeout(() => setCopied(false), 2000);
         }}
         className={`bg-primaryCyan text-neutralWhite py-3 rounded-lg font-bold text-xl md:w-1/4 hover:bg-cyan-200 ${
