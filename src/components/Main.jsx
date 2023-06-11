@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import ShortenedLinks from "./ShortenedLinks";
-import "./main.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -55,18 +54,22 @@ const Main = () => {
   };
 
   return (
-    <main className="-z-10">
+    <main>
       <div className="grid overflow-hidden justify-center relative lg:flex lg:flex-row-reverse px-6 md:pt-24 md:px-20 lg:px-40 md:text-left text-center py-10">
-        <div data-aos="fade-left" className="flex-1 lg:max-w-md md:p-0 px-10">
+        <div
+          data-aos="fade-left"
+          className="flex-1 -z-10 lg:max-w-md md:p-0 px-10"
+        >
           <img
-            className="lg:scale-150 md:scale-[120%] scale-[120%] -z-10 lg:translate-x-28 md:translate-x-1/5 translate-x-1/4"
+            className="lg:scale-150 md:scale-[120%] scale-[120%]  lg:translate-x-28 md:translate-x-1/5 translate-x-1/4"
             srcSet={require("../images/illustration-working.svg").default}
             alt="illustration-working"
           />
         </div>
+
         <div
           data-aos="fade-right"
-          className="z-10 md:flex-2 lg:flex-1 md:text-center lg:text-left"
+          className="md:flex-2 lg:flex-1 md:text-center lg:text-left pointer-events-auto -z-10 md:z-0"
         >
           <h1 className="text-5xl md:text-7xl font-bold pt-8 -tracking-wider">
             More than just
@@ -77,7 +80,7 @@ const Main = () => {
             <br className="hidden lg:inline" />
             insights on how your links are performing.
           </p>
-          <button className="bg-primaryCyan text-neutralWhite px-10 py-4 mt-6  rounded-full font-bold text-xl hover:bg-cyan-200">
+          <button className="bg-primaryCyan text-neutralWhite px-10 py-4 mt-6 flex-none rounded-full font-bold text-xl hover:bg-cyan-200 ease-in-out duration-200 transition hover:scale-110">
             Get Started
           </button>
         </div>
@@ -85,7 +88,6 @@ const Main = () => {
 
       <div className="bg-slate-100 px-6 mt-20 md:mt-32 md:px-20 lg:px-40 text-center pb-10 grid gap-5">
         {/* Text Input */}
-
         <form
           className="bg-[url('images/bg-boost-mobile.svg')] md:bg-[url('images/bg-boost-desktop.svg')] bg-no-repeat bg-right bg-primaryCyanViolet md:mx-0 grid md:flex gap-6 rounded-lg overflow-hidden p-6 md:p-10 -translate-y-24 md:-translate-y-16 "
           onSubmit={(e) => dataFetcher(e)}
@@ -97,7 +99,7 @@ const Main = () => {
             required
             placeholder="Shorten a link here..."
           />
-          <button className="bg-primaryCyan text-neutralWhite py-3 rounded-lg font-bold text-xl md:w-1/4 hover:bg-cyan-200">
+          <button className="bg-primaryCyan text-neutralWhite py-3 rounded-lg font-bold text-xl md:w-1/4 hover:bg-cyan-200 ease-in-out duration-200 transition">
             Shorten It!
           </button>
         </form>
@@ -115,9 +117,9 @@ const Main = () => {
           {statisticsInfo.map((item, index) => {
             return (
               <li
-                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                data-aos={"fade-up"}
                 key={index}
-                className={`p-8 first-letter relative z-50 bg-neutralWhite rounded-md transition ${
+                className={`p-8 first-letter relative  bg-neutralWhite rounded-md transition ${
                   index === 0 ? "lg:-translate-y-10" : ""
                 }
                 ${index === 2 ? "lg:translate-y-10" : ""}
@@ -143,7 +145,7 @@ const Main = () => {
         <h2 className="font-bold text-3xl text-neutralWhite py-6">
           Boost your links today
         </h2>
-        <button className="hover:bg-cyan-200 bg-primaryCyan text-neutralWhite px-10 py-3 rounded-full font-bold text-xl m-auto">
+        <button className="hover:bg-cyan-200 bg-primaryCyan text-neutralWhite px-10 py-3 rounded-full font-bold text-xl m-auto ease-in-out duration-200 transition hover:scale-110">
           Get Started
         </button>
       </div>

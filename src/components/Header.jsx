@@ -41,8 +41,10 @@ const Header = () => {
 
       {/* Nav Section */}
       <div className="hidden md:flex gap-4 items-center">
-        <button className="text-neutralGrayishViolet pr-4">Login</button>
-        <button className="bg-primaryCyan text-neutralWhite px-6 py-2 rounded-full font-bold text-md hover:bg-cyan-200">
+        <button className="text-neutralGrayishViolet pr-4 ease-in-out duration-200 transition hover:scale-110">
+          Login
+        </button>
+        <button className="bg-primaryCyan text-neutralWhite px-6 py-2 rounded-full font-bold text-md hover:bg-cyan-200 ease-in-out duration-200 transition hover:scale-110 ">
           Sign Up
         </button>
       </div>
@@ -57,25 +59,33 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {open ? (
-        <div className="fixed top-0 left-0 right-0 z-50">
-          <nav
-            data-aos="fade-right"
-            className="navbar bg-primaryCyanViolet absolute left-0 right-0 p-8 top-24 mx-6 rounded-xl text-white text-xl grid font-bold gap-8 z-50"
+        <nav
+          data-aos="fade-right"
+          className="navbar bg-primaryCyanViolet absolute left-0 right-0 p-8 top-24 mx-6 rounded-xl text-white text-xl grid font-bold gap-8 z-50"
+        >
+          <a className="cursor-pointer" href="/">
+            Features
+          </a>
+          <a className="cursor-pointer" href="/">
+            Pricing
+          </a>
+          <a className="cursor-pointer" href="/">
+            Resources
+          </a>
+          <hr className="border-neutralGrayishViolet border-[.1px]" />
+          <button
+            style={{ position: "relative", zIndex: "9999" }}
+            className="ease-in-out duration-200 transition hover:scale-110"
           >
-            <a href="/">Features</a>
-            <a href="/">Pricing</a>
-            <a href="/">Resources</a>
-            <hr className="border-neutralGrayishViolet border-[.1px]" />
-            <button>Login</button>
-            <button className="bg-primaryCyan text-neutralWhite py-3 rounded-full font-bold text-md hover:bg-cyan-200">
-              Sign Up
-            </button>
-            <div
-              onClick={() => setOpen(!open)}
-              className="fixed top-0 left-0 right-0 -z-20 w-full h-full "
-            ></div>
-          </nav>
-        </div>
+            Login
+          </button>
+          <button
+            style={{ position: "relative", zIndex: "9999" }}
+            className="bg-primaryCyan text-neutralWhite py-3 rounded-full font-bold text-md hover:bg-cyan-200 ease-in-out duration-200 transition hover:scale-110"
+          >
+            Sign Up
+          </button>
+        </nav>
       ) : (
         ""
       )}
